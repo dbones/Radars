@@ -1,0 +1,20 @@
+﻿@model Radar.Controllers.IndexModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1>Technical Radars</h1>
+    
+    <ul>
+        @foreach (var radar in @Model.Radars)
+        {
+            <li>
+                @Html.ActionLink(radar.Name, "File", new { fileName = radar.Name })
+            </li>
+        }
+    </ul>
+
+</div>
+
